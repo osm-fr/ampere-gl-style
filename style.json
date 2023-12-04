@@ -1,0 +1,143 @@
+{
+  "version": 8,
+  "name": "Ampere",
+  "metadata": {"maputnik:renderer": "mbgljs"},
+  "sources": {
+    "ampere": {
+      "type": "vector",
+      "tiles": [
+        "https://tile-vect.openstreetmap.fr/data/ampere/{z}/{x}/{y}.pbf"
+      ],
+      "minzoom": 8,
+      "maxzoom": 13
+    }
+  },
+  "glyphs": "https://tile-vect.openstreetmap.fr/fonts/{fontstack}/{range}.pbf",
+  "layers": [
+    {
+      "id": "hta",
+      "type": "line",
+      "source": "ampere",
+      "source-layer": "hta",
+      "paint": {"line-color": "#FF0000", "line-width": 2}
+    },
+    {
+      "id": "hts",
+      "type": "line",
+      "source": "ampere",
+      "source-layer": "hts",
+      "paint": {
+        "line-color": "#FF0000",
+        "line-width": 2,
+        "line-dasharray": [2, 1]
+      }
+    },
+    {
+      "id": "hta-name",
+      "type": "symbol",
+      "source": "ampere",
+      "source-layer": "hta",
+      "layout": {
+        "visibility": "visible",
+        "text-field": "{nom_grd}",
+        "symbol-placement": "line",
+        "text-offset": [0, 0.5]
+      },
+      "paint": {"text-color": "#FF0000"}
+    },
+    {
+      "id": "hts-name",
+      "type": "symbol",
+      "source": "ampere",
+      "source-layer": "hts",
+      "layout": {
+        "text-field": "{nom_grd}",
+        "symbol-placement": "line",
+        "text-offset": [0, 0.5]
+      },
+      "paint": {"text-color": "#FF0000"}
+    },
+    {
+      "id": "bta",
+      "type": "line",
+      "source": "ampere",
+      "source-layer": "bta",
+      "paint": {"line-color": "#D1C400", "line-width": 2}
+    },
+    {
+      "id": "bts",
+      "type": "line",
+      "source": "ampere",
+      "source-layer": "bts",
+      "paint": {
+        "line-color": "#D1C400",
+        "line-width": 2,
+        "line-dasharray": [2, 1]
+      }
+    },
+    {
+      "id": "bta-name",
+      "type": "symbol",
+      "source": "ampere",
+      "source-layer": "bta",
+      "layout": {
+        "visibility": "visible",
+        "text-field": "{nom_grd}",
+        "symbol-placement": "line",
+        "text-offset": [0, 0.5]
+      },
+      "paint": {"text-color": "#D1C400"}
+    },
+    {
+      "id": "bts-name",
+      "type": "symbol",
+      "source": "ampere",
+      "source-layer": "bts",
+      "layout": {
+        "text-field": "{nom_grd}",
+        "symbol-placement": "line",
+        "text-offset": [0, 0.5]
+      },
+      "paint": {"text-color": "#D1C400"}
+    },
+    {
+      "id": "poste-repartition",
+      "type": "circle",
+      "source": "ampere",
+      "source-layer": "poste-repartition",
+      "paint": {
+        "circle-color": "rgba(217, 78, 78, 1)",
+        "circle-stroke-color": "#000000",
+        "circle-stroke-width": 1
+      }
+    },
+    {
+      "id": "poste-distribution",
+      "type": "circle",
+      "source": "ampere",
+      "source-layer": "poste-distribution",
+      "paint": {
+        "circle-color": "rgba(209, 196, 0, 1)",
+        "circle-stroke-color": "#000000",
+        "circle-stroke-width": 1
+      }
+    },
+    {
+      "id": "poste-repartition-name",
+      "type": "symbol",
+      "source": "ampere",
+      "source-layer": "poste-repartition",
+      "layout": {"text-field": "{nom_ps} {nom_grd}", "text-offset": [0, 0.6]},
+      "paint": {"text-color": "#FF0000"}
+    },
+    {
+      "id": "poste-distribution-name",
+      "type": "symbol",
+      "source": "ampere",
+      "source-layer": "poste-distribution",
+      "layout": {"text-field": "{nom_ps} {nom_grd}", "text-offset": [0, 0.6]},
+      "paint": {"text-color": "#D1C400"}
+    }
+  ],
+  "id": "ampere-vecto"
+}
